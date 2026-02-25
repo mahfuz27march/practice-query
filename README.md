@@ -203,6 +203,6 @@ having count(*)>1 and count(*)=count(promo_code_name)
 select 
 	count(case when rank=1 and promo_code_name is null then customer_code end)*100.0/count(distinct customer_code) as percentage_of_customer
 from cte
+where rank=1 and promo_code_name is null
 ```
-``--where rank=1 and promo_code_name is null
 
